@@ -1,0 +1,12 @@
+{
+  "author": "Assaf Elovic",
+  "license": "ISC",
+  "description": "Facebook Messenger tutorial bot",
+  "dependencies": {
+    "express": "^4.13.4",
+    "body-parser": "^1.15.0",
+    "request": "^2.71.0",
+    "mongodb": "^2.1.18",
+    "mongoose": "^4.5.3"
+  }
+}
