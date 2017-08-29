@@ -1,14 +1,14 @@
-'use strict'
+'use strict';
 
-const express = require('express');
-const bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-const app = express();
-var facebook_parser = require('./utils/bot_utils.js');
+const express = require('express'),
+	bodyParser = require('body-parser'),
+	MONGO_HOST = (process.env.MONGO_HOST || 'mongodb://tester:insxlnz08@ds133348.mlab.com:33348/tiv'),
+	app = express(),
+	fb_api = require('./src/api/fb'),
+	mongoose = require('mongoose');
 
 app.set('port', (process.env.PORT || 3000));
-const MONGO_HOST = (process.env.MONGO_HOST || 'localhost');
-app.set('mongo_url', (process.env.MONGODB_URL || 'mongodb://'+MONGO_HOST+'/local'));
+app.set('mongo_url', (process.env.MONGODB_URL || `mongodb://${MONGO_HOST}/local`));
 
 mongoose.connect(app.get('mongo_url'),function(err){
 	if (err) {
@@ -30,10 +30,10 @@ app.get('/', function (req, res) {
 });
 
 // Facebook verification
-app.get('/webhook/', facebook_parser.facebookVerification);
+app.get('/webhook/', fb_api.facebookVerification);
 
 // Post data from Facebook Messenger
-app.post('/webhook/', facebook_parser.facebookWebhookListener);
+app.post('/webhook/', fb_api.facebookWebhookListener);
 
 // Server listener
 app.listen(app.get('port'), function() {
