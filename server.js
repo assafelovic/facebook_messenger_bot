@@ -2,7 +2,7 @@
 
 const express = require('express'),
 	bodyParser = require('body-parser'),
-	MONGO_HOST = (process.env.MONGO_HOST || 'mongodb://tester:insxlnz08@ds133348.mlab.com:33348/tiv'),
+	MONGO_HOST = (process.env.MONGO_HOST || 'local'),
 	app = express(),
 	fb_api = require('./src/api/fb'),
 	mongoose = require('mongoose');
