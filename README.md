@@ -4,7 +4,7 @@ Author: Assaf Elovic, assaf.elovic@gmail.com
 Facebook Messenger chatbot tutorial - See www.assafelovic.com
 
 ## Stack
-The Chatbot is built on a Node.js server, integrates with MongoDB and uses Facebook Messenger API.
+The Chatbot is built on a Node.js (ES6) server, connects with MongoDB and uses Facebook Messenger and Graph API.
 
 - Installing Node.js: https://nodejs.org/en/download/
 - Installing MongoDB: https://docs.mongodb.com/manual/installation/
